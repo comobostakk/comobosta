@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤠 JUKEBOX DO GRAGAS CAIPIRA 🍺</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-gragas"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🤠 JUKEBOX DO GRAGAS CAIPIRA 🍺</h1>
+            <p>As músicas mais raiz que você já ouviu na vida, sô!</p>
+        </div>
+
+        <div class="jukebox">
+            <div class="music-info">
+                <div class="current-song" id="currentSong">🤠 Escolha uma música da roça 🤠</div>
+                <div>Status: <span id="status">Parado</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn" onclick="playRandomSong()">ALEATÓRIA</button>
+                <button class="btn" onclick="togglePlay()" id="playBtn">PLAY</button>
+                <button class="btn" onclick="stopMusic()">STOP</button>
+                <button class="btn" onclick="nextSong()">PRÓXIMA</button>
+            </div>
+
+            <div class="playlist-controls">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="autoplayToggle" checked>
+                    <span class="slider"></span>
+                    <span class="toggle-label">🔄 Tocar Próxima Automaticamente</span>
+                </label>
+            </div>
+
+            <audio id="audioPlayer" style="width: 100%; margin-top: 15px;">
+                Seu navegador não suporta áudio, sô!
+            </audio>
+        </div>
+
+        <div class="game-section">
+            <h2>🎮 QUIZ DA ROÇA: ADIVINHE A MÚSICA!</h2>
+            <p>Ouça o áudio e tente adivinhar qual música é, caipira!</p>
+            <button class="btn" onclick="startQuiz()">🎯 COMEÇAR QUIZ DA ROÇA</button>
+            
+            <div id="quizArea" style="display: none;">
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <p id="quizQuestion">Qual é essa música da roça?</p>
+                <div class="quiz-timer" id="quizTimer">⏰ 15s</div>
+                <div class="quiz-options" id="quizOptions"></div>
+            </div>
+
+            <div class="score">
+                🏆 Pontuação: <span id="score">0</span> | 🎯 Acertos: <span id="correct">0</span> | ❌ Erros: <span id="wrong">0</span>
+            </div>
+        </div>
+
+        <div class="playlist">
+            <h3>📀 PLAYLIST RAIZ DO GRAGAS</h3>
+            <div class="song-list" id="songList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
